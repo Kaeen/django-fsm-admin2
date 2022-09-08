@@ -60,4 +60,16 @@ def deactivate(self, text):
 
 Form class can also be set as import string: ```{'form': 'my_app.forms.DeactivateForm'}```
 
+If using fieldset, you should add ```fsm_display_FIELDNAME``` to one of your fields lists in order to make transition buttons visible: 
 
+```
+fieldsets = (
+    ...
+    (
+        'State fields caption': {
+            'fields': ('my_state_field', 'fsm_display_my_state_field')
+        }
+    )
+    ...
+)
+```
